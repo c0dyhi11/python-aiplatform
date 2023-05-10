@@ -600,6 +600,7 @@ class ChatSession:
         model: ChatModel,
         context: Optional[str] = None,
         examples: Optional[List[InputOutputTextPair]] = None,
+        history: Optional[List[InputOutputTextPair]] = None,
         max_output_tokens: int = TextGenerationModel._DEFAULT_MAX_OUTPUT_TOKENS,
         temperature: float = TextGenerationModel._DEFAULT_TEMPERATURE,
         top_k: int = TextGenerationModel._DEFAULT_TOP_K,
@@ -608,7 +609,7 @@ class ChatSession:
         self._model = model
         self._context = context
         self._examples = examples
-        self._history = []
+        self._history = history
         self._max_output_tokens = max_output_tokens
         self._temperature = temperature
         self._top_k = top_k
